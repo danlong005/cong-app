@@ -1,40 +1,46 @@
 "use client";
 
+import { Publisher } from "@/types";
 import { SideBarProps } from "./SideBarProps";
 
 export function SideBar(props: SideBarProps) {
   const { setSelectedPublisher } = props;
 
-  const publishers = [
+  const publishers: Array<Publisher> = [
     {
       id: 1,
       firstName: "Daniel",
       lastName: "Long",
       elder: true,
+      baptisedAt: new Date(),
     },
     {
       id: 2,
       firstName: "Blair",
       lastName: "Long",
       elder: false,
+      baptisedAt: new Date(),
     },
     {
       id: 3,
       firstName: "Lily",
       lastName: "Long",
       elder: false,
+      baptisedAt: new Date(),
     },
     {
       id: 4,
       firstName: "Kinsley",
       lastName: "Long",
       elder: false,
+      baptisedAt: new Date(),
     },
     {
       id: 5,
       firstName: "Annabelle",
       lastName: "Long",
       elder: false,
+      baptisedAt: new Date(),
     },
   ];
 
@@ -44,7 +50,7 @@ export function SideBar(props: SideBarProps) {
         {publishers?.map((publisher, index) => {
           return (
             <li
-              onClick={() => setSelectedPublisher(publisher.id)}
+              onClick={() => setSelectedPublisher(publisher)}
               key={publisher.id}
               className={
                 "border border-gray-100 pl-1 cursor-pointer h-[25px] " +

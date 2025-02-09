@@ -1,3 +1,5 @@
+import { Publisher } from "@/types";
+
 export interface SideBarProps {
-    setSelectedPublisher: (selectedPublisher: number) => void;
+    setSelectedPublisher: (selectedPublisher: Publisher) => void;
 }

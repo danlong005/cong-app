@@ -1,3 +1,5 @@
+import { Publisher } from "@/types";
+
 export interface MainWindowProps {
-    selectedPublisher: number;
+    selectedPublisher: Publisher | undefined;
 }
