@@ -4,7 +4,7 @@ import { Publisher } from "@/types";
 import { SideBarProps } from "./SideBarProps";
 
 export function SideBar(props: SideBarProps) {
-  const { setSelectedPublisher } = props;
+  const { setSelectedPublisher, setSelectedTab } = props;
 
   const publishers: Array<Publisher> = [
     {
@@ -45,16 +45,20 @@ export function SideBar(props: SideBarProps) {
   ];
 
   return (
-    <div className={"border border-gray-100 w-1/5 h-[80vh] p-1"}>
+    <div className={"w-1/5 h-[80vh] p-1"}>
       <ul>
+        <li className={"bg-gray-600 text-white p-1"}>Publishers</li>
         {publishers?.map((publisher, index) => {
           return (
             <li
-              onClick={() => setSelectedPublisher(publisher)}
+              onClick={() => {
+                setSelectedPublisher(publisher);
+                setSelectedTab(0);
+              }}
               key={publisher.id}
               className={
-                "border border-gray-100 pl-1 cursor-pointer h-[25px] " +
-                (index % 2 == 0 ? "bg-gray-100" : "")
+                "pl-1 cursor-pointer h-[25px] " +
+                (index % 2 == 0 ? "bg-gray-300" : "")
               }
             >
               <p>{publisher.lastName + ", " + publisher.firstName}</p>

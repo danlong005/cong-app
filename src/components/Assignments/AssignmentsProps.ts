@@ -1,5 +1,5 @@
 import { Publisher } from "@/types";
 
-export interface SpiritualProps {
+export interface AssignmentsProps {
     selectedPublisher: Publisher | null;
 }

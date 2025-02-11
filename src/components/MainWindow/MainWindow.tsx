@@ -3,15 +3,10 @@
 import { useState } from "react";
 import { Tabs } from "../Tabs/Tabs";
 import { MainWindowProps } from "./MainWindowProps";
-import { Personal, Spiritual, Unknown } from "@/components";
+import { Assignments, Personal, Spiritual, Unknown } from "@/components";
 
 export function MainWindow(props: MainWindowProps) {
-  const { selectedPublisher } = props;
-  const [selectedTab, setSelectedTab] = useState(0);
-
-  const onClickTab = (newSelectedTab: number) => {
-    setSelectedTab(newSelectedTab);
-  };
+  const { selectedPublisher, selectedTab, setSelectedTab } = props;
 
   const tabs = [
     {
@@ -24,16 +19,23 @@ export function MainWindow(props: MainWindowProps) {
       text: "Spiritual",
       component: <Spiritual selectedPublisher={selectedPublisher} />,
     },
+    {
+      id: 2,
+      text: "Assignments",
+      component: <Assignments selectedPublisher={selectedPublisher} />,
+    },
   ];
 
   return (
-    <div className={"border border-gray-100 w-4/5 p-1"}>
-      <Tabs tabs={tabs} selectedTab={selectedTab} setSelectedTab={onClickTab} />
+    <div className={"w-4/5 p-1"}>
+      <Tabs
+        tabs={tabs}
+        selectedTab={selectedTab}
+        setSelectedTab={setSelectedTab}
+      />
 
       <div
-        className={
-          "border border-gray-100 bg-gray-100 h-[75vh] p-1 m-0 rounded-lg"
-        }
+        className={"border border-gray-300 bg-gray-300 h-[75vh] p-1 rounded-lg"}
       >
         {tabs.find((tab) => tab.id === selectedTab)?.component ?? <Unknown />}
       </div>
