@@ -2,6 +2,7 @@ import { App } from './App/App';
 import { Assignments } from './Assignments/Assignments';
 import { Footer } from './Footer/Footer';
 import { Header } from './Header/Header';
+import { Loading } from './Loading/Loading';
 import { MainWindow } from './MainWindow/MainWindow';
 import { Personal } from './Personal/Personal';
 import { SideBar } from './SideBar/SideBar';
@@ -14,6 +15,7 @@ export {
     Assignments,
     Footer,
     Header,
+    Loading,
     MainWindow,
     Personal,
     SideBar,

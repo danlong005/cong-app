@@ -1,4 +1,4 @@
-export function Header() {
+export async function Header() {
   return (
     <div
       className={

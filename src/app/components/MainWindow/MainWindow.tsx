@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Tabs } from "../Tabs/Tabs";
 import { MainWindowProps } from "./MainWindowProps";
-import { Assignments, Personal, Spiritual, Unknown } from "@/components";
+import { Assignments, Personal, Spiritual, Unknown } from "@/app/components";
 
 export function MainWindow(props: MainWindowProps) {
   const { selectedPublisher, selectedTab, setSelectedTab } = props;

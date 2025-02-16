@@ -1,6 +1,8 @@
 import { Publisher } from "@/types";
 
-export interface SideBarProps {
+export interface SideBarItemProps {
+    publisher: Publisher;
     setSelectedPublisher: (selectedPublisher: Publisher) => void;
     setSelectedTab: (tabId: number) => void;
+    index: number;
 }
