@@ -1,28 +1,29 @@
 "use client";
 
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Tabs } from "../Tabs/Tabs";
-import { MainWindowProps } from "./MainWindowProps";
 import { Assignments, Personal, Spiritual, Unknown } from "@/app/components";
+import { PublisherContext } from "@/app/contexts/PublisherContext";
 
-export function MainWindow(props: MainWindowProps) {
-  const { selectedPublisher, selectedTab, setSelectedTab } = props;
+export function MainWindow() {
+  const { selectedPublisher, setSelectedTab, selectedTab } =
+    useContext(PublisherContext);
 
   const tabs = [
     {
       id: 0,
       text: "Personal",
-      component: <Personal selectedPublisher={selectedPublisher} />,
+      component: <Personal />,
     },
     {
       id: 1,
       text: "Spiritual",
-      component: <Spiritual selectedPublisher={selectedPublisher} />,
+      component: <Spiritual />,
     },
     {
       id: 2,
       text: "Assignments",
-      component: <Assignments selectedPublisher={selectedPublisher} />,
+      component: <Assignments />,
     },
   ];
 

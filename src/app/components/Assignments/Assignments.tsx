@@ -1,7 +1,8 @@
-import { AssignmentsProps } from "./AssignmentsProps";
+import { useContext } from "react";
+import { PublisherContext } from "@/app/contexts/PublisherContext";
 
-export function Assignments(props: AssignmentsProps) {
-  const { selectedPublisher } = props;
+export function Assignments() {
+  const { selectedPublisher } = useContext(PublisherContext);
   return (
     selectedPublisher && (
       <>

@@ -3,7 +3,14 @@
 import { MainWindow, SideBar } from "@/app/components";
 import { Publisher } from "@/types";
 import { useState } from "react";
-import { AppProps } from "./AppProps";
+import {
+  PublisherContext,
+  PublisherContextProps,
+} from "@/app/contexts/PublisherContext";
+
+export interface AppProps {
+  publishers: Publisher[];
+}
 
 export function App(props: AppProps) {
   const { publishers } = props;
@@ -12,21 +19,21 @@ export function App(props: AppProps) {
   );
   const [selectedTab, setSelectedTab] = useState(0);
 
-  return (
-    <main>
-      <div className={"flex"}>
-        <SideBar
-          setSelectedPublisher={setSelectedPublisher}
-          setSelectedTab={setSelectedTab}
-          publishers={publishers}
-        />
+  const publisherContextValue: PublisherContextProps = {
+    publishers: publishers,
+    selectedPublisher: selectedPublisher,
+    selectedTab: selectedTab,
+    setSelectedPublisher: setSelectedPublisher,
+    setSelectedTab: setSelectedTab,
+  };
 
-        <MainWindow
-          selectedPublisher={selectedPublisher}
-          selectedTab={selectedTab}
-          setSelectedTab={setSelectedTab}
-        />
+  return (
+    <PublisherContext.Provider value={publisherContextValue}>
+      <div className={"flex"}>
+        <SideBar />
+
+        <MainWindow />
       </div>
-    </main>
+    </PublisherContext.Provider>
   );
 }

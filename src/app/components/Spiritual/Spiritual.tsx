@@ -1,7 +1,8 @@
-import { SpiritualProps } from "./SpiritualProps";
+import { useContext } from "react";
+import { PublisherContext } from "@/app/contexts/PublisherContext";
 
-export function Spiritual(props: SpiritualProps) {
-  const { selectedPublisher } = props;
+export function Spiritual() {
+  const { selectedPublisher } = useContext(PublisherContext);
 
   function setElder(elder: boolean) {}
 

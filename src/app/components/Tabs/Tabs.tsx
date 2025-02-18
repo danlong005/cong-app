@@ -1,9 +1,22 @@
 "use client";
 
-import { TabsProps } from "./TabsProps";
+import { useContext } from "react";
+import { PublisherContext } from "@/app/contexts/PublisherContext";
+
+export type Tab = {
+  id: number;
+  text: string;
+};
+
+export interface TabsProps {
+  tabs: Array<Tab>;
+  selectedTab: number;
+  setSelectedTab: (selectedTab: number) => void;
+}
 
 export function Tabs(props: TabsProps) {
-  const { tabs, setSelectedTab, selectedTab } = props;
+  const { tabs } = props;
+  const { setSelectedTab, selectedTab } = useContext(PublisherContext);
 
   return (
     <ul className={"flex p-0 pl-5 m-0"}>

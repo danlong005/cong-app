@@ -1,9 +1,18 @@
 "use client";
 
-import { SideBarItemProps } from "./SideBarItemProps";
+import { PublisherContext } from "@/app/contexts/PublisherContext";
+
+import { Publisher } from "@/types";
+import { useContext } from "react";
+
+export interface SideBarItemProps {
+  publisher: Publisher;
+  index: number;
+}
 
 export function SideBarItem(props: SideBarItemProps) {
-  const { publisher, setSelectedPublisher, setSelectedTab, index } = props;
+  const { publisher, index } = props;
+  const { setSelectedPublisher, setSelectedTab } = useContext(PublisherContext);
 
   return (
     <li
