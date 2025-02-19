@@ -1,11 +1,10 @@
 import { useContext } from "react";
 import { PublisherContext } from "@/app/contexts/PublisherContext";
+import { usePublisher } from "@/app/hooks/usePublisher";
 
 export function Assignments() {
   const { selectedPublisherId, publishers } = useContext(PublisherContext);
-  const selectedPublisher = publishers.filter(
-    (p) => p.id === selectedPublisherId
-  )![0];
+  const selectedPublisher = usePublisher(publishers, selectedPublisherId);
 
   return (
     selectedPublisher && (
