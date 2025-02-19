@@ -2,7 +2,10 @@ import { useContext } from "react";
 import { PublisherContext } from "@/app/contexts/PublisherContext";
 
 export function Spiritual() {
-  const { selectedPublisher } = useContext(PublisherContext);
+  const { selectedPublisherId, publishers } = useContext(PublisherContext);
+  const selectedPublisher = publishers.filter(
+    (p) => p.id === selectedPublisherId
+  )![0];
 
   function setElder(elder: boolean) {}
 

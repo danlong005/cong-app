@@ -6,18 +6,20 @@ import { createContext } from "react";
 
 export type PublisherContextProps = {
     publishers: Publisher[];
-    selectedPublisher: Publisher | null;
-    setSelectedPublisher: (publisher: Publisher | null) => void;
+    selectedPublisherId: number;
+    setSelectedPublisherId: (publisherId: number) => void;
     selectedTab: number;
     setSelectedTab: (tab: number) => void;
+    updatePublishers: (publishers: Publisher[]) => void;
 } 
 const publishers:Publisher[] = [];
 const publisherContextProps: PublisherContextProps = {
     publishers: [],
     selectedTab: 0,
-    selectedPublisher: null,
-    setSelectedPublisher: () => {},
-    setSelectedTab: () => {}
+    selectedPublisherId: 0,
+    setSelectedPublisherId: (publisherId: number) => {},
+    setSelectedTab: () => {},
+    updatePublishers: (publishers: Publisher[]) => {}
 }
 
 

@@ -12,12 +12,13 @@ export interface SideBarItemProps {
 
 export function SideBarItem(props: SideBarItemProps) {
   const { publisher, index } = props;
-  const { setSelectedPublisher, setSelectedTab } = useContext(PublisherContext);
+  const { setSelectedPublisherId, setSelectedTab } =
+    useContext(PublisherContext);
 
   return (
     <li
       onClick={() => {
-        setSelectedPublisher(publisher);
+        setSelectedPublisherId(publisher.id);
         setSelectedTab(0);
       }}
       className={

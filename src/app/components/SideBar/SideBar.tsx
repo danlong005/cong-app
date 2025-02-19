@@ -5,8 +5,7 @@ import { PublisherContext } from "@/app/contexts/PublisherContext";
 import { useContext } from "react";
 
 export function SideBar() {
-  const { publishers, setSelectedPublisher, setSelectedTab } =
-    useContext(PublisherContext);
+  const { publishers } = useContext(PublisherContext);
 
   return (
     <div className={"w-1/5 h-[80vh] p-1"}>

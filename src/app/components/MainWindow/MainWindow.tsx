@@ -6,8 +6,7 @@ import { Assignments, Personal, Spiritual, Unknown } from "@/app/components";
 import { PublisherContext } from "@/app/contexts/PublisherContext";
 
 export function MainWindow() {
-  const { selectedPublisher, setSelectedTab, selectedTab } =
-    useContext(PublisherContext);
+  const { setSelectedTab, selectedTab } = useContext(PublisherContext);
 
   const tabs = [
     {

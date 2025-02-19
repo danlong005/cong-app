@@ -9,22 +9,22 @@ import {
 } from "@/app/contexts/PublisherContext";
 
 export interface AppProps {
-  publishers: Publisher[];
+  publisherList: Publisher[];
 }
 
 export function App(props: AppProps) {
-  const { publishers } = props;
-  const [selectedPublisher, setSelectedPublisher] = useState<Publisher | null>(
-    null
-  );
+  const { publisherList } = props;
+  const [selectedPublisherId, setSelectedPublisherId] = useState<number>(0);
   const [selectedTab, setSelectedTab] = useState(0);
+  const [publishers, updatePublishers] = useState(publisherList);
 
   const publisherContextValue: PublisherContextProps = {
     publishers: publishers,
-    selectedPublisher: selectedPublisher,
+    selectedPublisherId: selectedPublisherId,
     selectedTab: selectedTab,
-    setSelectedPublisher: setSelectedPublisher,
+    setSelectedPublisherId: setSelectedPublisherId,
     setSelectedTab: setSelectedTab,
+    updatePublishers: updatePublishers,
   };
 
   return (

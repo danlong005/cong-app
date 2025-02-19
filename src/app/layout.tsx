@@ -14,13 +14,13 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const publishers: Publisher[] = await getPublishers();
+  const publisherList: Publisher[] = await getPublishers();
 
   return (
     <html lang="en">
       <body>
         <Header />
-        <App publishers={publishers} />
+        <App publisherList={publisherList} />
         <Footer />
       </body>
     </html>
